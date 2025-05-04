@@ -1,11 +1,167 @@
 ---
+import { homeBannerImages } from '@data/homeBannerImages';
+import { hourlies } from '@data/salonInfo'
+
+const { monday, tuesday, wednesday, thursday, friday, saturday, sunday } = hourlies
+
 import Layout from '../layouts/Layout.astro';
-import ReactComponent from '../components/ReactComponent';
+import NavigationBar from '@components/Navigation';
+import BannerSlider from '@components/Home/BannerSlider';
+import ServiceCard from '@components/Home/ServiceCard.astro';
+import Footer from '@components/Footer.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<ReactComponent />
+	<NavigationBar client:load />
+	<!--- Banner Section --->
+	<section class="home-banner-wrapper w-full relative over-x">
+		<article class="w-full h-8/12 md:w-5/12 flex flex-col gap-5 absolute top-6/12 left-1/12 md:top-4/12 md:left-6/12 z-10">
+			<h2 class="text-3xl text-white text-shadow">Beauty Salon</h2>
+			<p class="text-xl text-white text-shadow">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora, soluta.</p>
+			<a href="#" class="w-fit text-xl text-white text-shadow border-2 border-amber-100 px-3 py-2">Reservation</a>
+		</article>
+		<BannerSlider images={homeBannerImages} client:visible />
+	</section>
+	<!--- Services Section --->
+	<section
+		class="min-h-screen flex flex-col justify-center items-center py-10 bg-zinc-800"
+		aria-labelledby="home-services-title"
+	>
+		<h2 class="capital text-3xl text-center mb-4 text-white" id="home-services-title">
+			our main services
+		</h2>
+		<p class="text-center max-w-8/12 text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur veritatis molestiae odit magni voluptatibus perspiciatis aliquam deserunt, accusamus maxime dolores.</p>
+		<article
+			class="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-2 py-5"
+			aria-label="Main services cards section"
+		>
+			<ServiceCard
+				src="/images/home-services/service-1.webp"
+				alt="Hair stylist cutting the hair of a woman"
+				title="Hair Styling"
+				description="description description description"
+			/>
+			<ServiceCard
+				src="/images/home-services/service-2.webp"
+				alt="Person holding a jar of skin cream"
+				title="Skin Care"
+				description="description description description"
+			/>
+		<ServiceCard
+			src="/images/home-services/service-3.webp"
+			alt="Professional cleaning a client's nails"
+			title="Nails Work"
+			description="description description description"
+		/>
+		</article>
+		<a
+			class="text-white white-button"
+			href="/services"
+			aria-label="Button for going to services page"
+			title="Click for going to Services page"
+		>
+			See All Services
+		</a>
+	</section>
+	<!--- About Section --->
+	<section class="flex flex-col py-10" aria-label="Informational background about the salon">
+		<!--- "Who we are" --->
+		<article
+			class="w-full flex flex-col md:flex-row justify-center items-center gap-5 py-10"
+			aria-labelledby="who-we-are-subtitle"
+		>
+			<div class="w-full md:w-5/12 flex flex-col gap-3">
+				<h2 class="text-3xl" id="who-we-are-subtitle capital">
+					who we are...
+				</h2>
+				<p class="text-xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae enim, eos id iure minus amet molestias quod repudiandae debitis itaque quia dignissimos modi, quo repellat? Nihil, exercitationem dolorem inventore sint rerum aliquid accusamus quibusdam veniam!</p>
+				<a
+					class="black-button"
+					href="/about"
+					aria-label="Button for going to About page"
+					title="Click for going to About page"
+				>
+					know more
+				</a>
+			</div>
+			<figure class="w-full md:w-5/12 flex justify-center items-center bg-amber-50" id="who-we-are-fig">
+				<img
+					class="w-full"
+					src="/images/home-about/home-about-1.webp"
+					alt="alt"
+					title="title"
+				>
+			</figure>
+		</article>
+		<!--- "Our commitment" --->
+		<article
+			class="w-full flex flex-col md:flex-row justify-center items-center gap-5 py-10"
+			aria-labelledby="our-commitment-subtitle"
+		>
+			<figure class="w-full md:w-5/12 flex justify-center items-center" id="our-commitment-fig">
+				<img
+					class="w-full"
+					src="/images/home-about/home-about-1.webp"
+					alt="alt"
+					title="title"
+				>
+			</figure>
+			<div class="w-full md:w-5/12 flex flex-col gap-3">
+				<h2 class="text-3xl" id="our-commitment-subtitle capital">our commitment...</h2>
+				<p class="text-xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae enim, eos id iure minus amet molestias quod repudiandae debitis itaque quia dignissimos modi, quo repellat? Nihil, exercitationem dolorem inventore sint rerum aliquid accusamus quibusdam veniam!</p>
+				<a
+					class="black-button"
+					href="/contact"
+					aria-label="Button for going to Contact page"
+					title="Click for going to Contact page"
+				>
+					contact us
+				</a>
+			</div>
+		</article>
+	</section>
+	<!--- Hourlies Section --->
+	<section
+		id="hourlies-section"
+		class="min-h-screen flex flex-col justify-center items-center gap-8"
+		aria-labelledby="hourlies-subtitle"
+	>
+		<h2 class="text-4xl text-white text-shadow" id="hourlies-subtitle">
+			Hourlies <i class="fa-regular fa-clock"></i>
+		</h2>
+		<ul class="hourlies flex flex-col justify-center items-center text-white text-2xl gap-4 text-shadow">
+			<li>Monday {monday}</li>
+			<li>Tuesday {tuesday}</li>
+			<li>Wednesday {wednesday}</li>
+			<li>Thursday {thursday}</li>
+			<li>Friday {friday}</li>
+			<li>Saturday {saturday}</li>
+			<li>Sunday {sunday}</li>
+		</ul>
+		<a
+			href=""
+			class="white-button text-white text-shadow hover-shadowless"
+			aria-label="Button for booking and appointment"
+			title="Click for booking and appointment"
+		>
+			Book An Appointment <i class="fa-regular fa-calendar-check"></i>
+		</a>
+	</section>
+	<!--- Quote Section --->
+	<section
+		class="min-h-[80vh] flex flex-col justify-center items-center"
+		id="home-quote-section"
+		aria-label="Motivational quote final section"
+	>
+		<blockquote class="max-w-10/12 md:max-w-8/12 flex flex-col justify-center items-center text-shadow">
+			<p class="text-2xl text-center text-white">
+				<q>Beauty begins the moment you decide to be yourself.</q>
+			</p>
+			<cite class="w-full text-2xl text-center text-white">—Coco Chanel</cite>
+		</blockquote>
+	</section>
+	<Footer />
 </Layout>

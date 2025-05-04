@@ -1,0 +1,7 @@
+@use '../../includes/colors' as color;
+
+.home-banner-swiper {
+  .swiper-button-prev, .swiper-button-next {
+    color: color.$lightBlack;
+  }
+}

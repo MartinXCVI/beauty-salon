@@ -1,0 +1,127 @@
+---
+import { salonData } from "@data/salonInfo"
+
+const { name, address, city, state, email, phone, facebook, instagram, pinterest, youtube } = salonData
+
+import { getCurrentYear } from "@utils/getCurrentYear"
+---
+
+<footer class="w-full flex-col px-5 py-10" id="footer">
+  <section
+    class="w-full flex flex-col justify-start items-start sm:flex-row md:justify-evenly gap-5"
+    aria-label="Information and links section"
+  >
+    <ul class="w-full sm:w-fit flex flex-col gap-2">
+      <li>
+        <h2 class="text-xl"><i class="fa-solid fa-scissors"></i> {name}</h2>
+      </li>
+      <li>
+        <i class="fa-solid fa-location-arrow"></i> {address}
+      </li>
+      <li>
+        <i class="fa-solid fa-city"></i> {city}
+      </li>
+      <li>
+        <i class="fa-solid fa-map-location-dot"></i> {state}
+      </li>
+      <li>
+        <i class="fa-solid fa-envelope"></i> {email}
+      </li>
+      <li>
+        <i class="fa-solid fa-phone"></i> {phone}
+      </li>
+    </ul>
+    <nav class="w-full sm:w-fit flex flex-col gap-2">
+      <h2 class="text-xl">Navigation</h2>
+      <ul class="flex flex-col">
+        <li>
+          <a href="/" class="text-gray-800 hover:text-pink-500">
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="/about" class="text-gray-800 hover:text-pink-500">
+            About
+          </a>
+        </li>
+        <li>
+          <a href="/contact" class="text-gray-800 hover:text-pink-500">
+            Contact
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <nav class="w-full sm:w-fit flex flex-col gap-2">
+      <h2 class="text-xl">Services</h2>
+      <ul class="flex flex-col">
+        <li>
+          <a href="/hair-styling" class="text-gray-800 hover:text-pink-500">
+            Hair Styling
+          </a>
+        </li>
+        <li>
+          <a href="/nails" class="text-gray-800 hover:text-pink-500">
+            Nails
+          </a>
+        </li>
+        <li>
+          <a href="/skin-care" class="text-gray-800 hover:text-pink-500">
+            Skin Care
+          </a>
+        </li>
+        <li>
+          <a href="/massage" class="text-gray-800 hover:text-pink-500">
+            Massage
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="w-full sm:w-fit flex flex-col gap-2">
+      <h2 class="text-xl">Follow Us</h2>
+      <div class="flex justify-start items-center gap-3">
+        <a
+          href={facebook}
+          aria-label="Button for going to our Facebook page"
+          title="Click for going to our Facebook page"
+        >
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a
+          href={instagram}
+          aria-label="Button for oing to our Instagram account"
+          title="Click for oing to our Instagram account"
+        >
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a
+          href={pinterest}
+          aria-label="Button for going to our Pinterest account"
+          title="Click for going to our Pinterest account"
+        >
+          <i class="fa-brands fa-pinterest"></i>
+        </a>
+        <a
+          href={youtube}
+          aria-label="Button for going to our YouTube channel"
+          title="Click for going to our YouTube channel"
+        >
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!--- End of info & links section --->
+  <section class="flex justify-center items-center mt-10" aria-label="Copyright & author section">
+    <p>
+      <span>© { getCurrentYear() } </span>
+      <a
+        class='dev-github'
+        href="https://github.com/MartinXCVI"
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        MartinXCVI <i class="fa-brands fa-github"></i>
+    </a>
+    </p>
+  </section>
+</footer>

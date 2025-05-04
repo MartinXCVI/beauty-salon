@@ -1,0 +1,18 @@
+---
+import type { IServiceCard } from "@interfaces/IServiceCard"
+
+const { src, alt, title, description } = Astro.props as IServiceCard
+---
+
+<article class="service-card w-full sm:w-5/6 lg:w-3/12 flex flex-col items-center gap-2 p-3">
+  <figure class="w-full">
+    <img
+      class="w-full"
+      src={src}
+      alt={alt}
+      title={alt}
+    >
+  </figure>
+  <h3 class="text-2xl text-white">{title}</h3>
+  <p class="text-white">{description}</p>
+</article>

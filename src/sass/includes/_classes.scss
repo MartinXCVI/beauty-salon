@@ -1,0 +1,56 @@
+@use './colors' as color;
+@use './variables' as var;
+
+.capital {
+  text-transform: capitalize;
+}
+
+.caps {
+  text-transform: uppercase;
+}
+
+.over-x {
+  overflow-x: hidden;
+}
+
+.over-y {
+  overflow-y: hidden;
+}
+
+.over-hidden {
+  overflow: hidden;
+}
+
+.text-shadow {
+  text-shadow: 0rem 0rem 0.25rem #020202;
+}
+
+.hover-shadowless {
+  &:hover {
+    text-shadow: 0rem 0rem 0rem;
+  }
+}
+
+.white-button {
+  width: fit-content;
+  border: 1px solid color.$white;
+  padding: 0.75rem 1rem;
+  text-transform: uppercase;
+  transition: var.$trs03;
+  &:hover {
+    background-color: color.$white;
+    color: color.$black;
+  }
+}
+
+.black-button {
+  width: fit-content;
+  border: 1px solid color.$black;
+  padding: 0.75rem 1rem;
+  text-transform: uppercase;
+  transition: var.$trs03;
+  &:hover {
+    background-color: color.$black;
+    color: color.$white;
+  }
+}

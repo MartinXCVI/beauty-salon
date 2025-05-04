@@ -1,0 +1,38 @@
+@use './includes/mixins' as mx;
+@use './includes/colors' as color;
+@use './includes/typography' as font;
+@use './includes/variables' as var;
+
+
+* {
+
+  box-sizing: border-box;
+  list-style: none;
+  font-family: font.$textFont;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  text-transform: capitalize;
+  font-family: font.$titleFont;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+p {
+  margin-bottom: 0.75rem;
+  text-wrap: pretty;
+}
+
+button {
+  cursor: pointer;
+}

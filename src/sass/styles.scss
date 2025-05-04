@@ -1,0 +1,30 @@
+/*----- Global -----*/
+@use './global.scss';
+
+/*----- Includes -----*/
+@use './includes/colors';
+@use './includes/mixins';
+@use './includes/typography';
+@use './includes/variables';
+@use './includes/classes';
+
+/*----- Components -----*/
+// Home
+@use './components/Home/bannerSlider.scss';
+
+// For components
+
+/*----- Views -----*/
+@use './views/home.scss';
+
+// For views
+
+/*----- Fonts & Icons -----*/
+
+// Belleza font
+@import url('https://fonts.googleapis.com/css2?family=Belleza&display=swap');
+// Open Sans font
+@import url('https://fonts.googleapis.com/css2?family=Belleza&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+// Font Awesome CDN
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css');
