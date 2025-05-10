@@ -1,0 +1,32 @@
+---
+import { businessHours } from "@data/salonInfo"
+
+const { monday, tuesday, wednesday, thursday, friday, saturday, sunday } = businessHours
+---
+
+<section
+id="hourlies-section"
+class="min-h-screen flex flex-col justify-center items-center gap-8"
+aria-labelledby="hourlies-subtitle"
+>
+<h2 class="text-4xl text-white text-shadow" id="hourlies-subtitle">
+  Hourlies <i class="fa-regular fa-clock"></i>
+</h2>
+<ul class="hourlies flex flex-col justify-center items-center text-white text-2xl gap-4 text-shadow">
+  <li>Monday {monday}</li>
+  <li>Tuesday {tuesday}</li>
+  <li>Wednesday {wednesday}</li>
+  <li>Thursday {thursday}</li>
+  <li>Friday {friday}</li>
+  <li>Saturday {saturday}</li>
+  <li>Sunday {sunday}</li>
+</ul>
+<a
+  href=""
+  class="white-button text-white text-shadow hover-shadowless"
+  aria-label="Button for booking and appointment"
+  title="Click for booking and appointment"
+>
+  Book An Appointment <i class="fa-regular fa-calendar-check"></i>
+</a>
+</section>

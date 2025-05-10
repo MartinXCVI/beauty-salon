@@ -44,10 +44,10 @@ const NavigationBar = (): JSX.Element => {
 
             {/* Desktop menu */}
             <div className="hidden sm:flex space-x-6">
-              <a href="#" className="text-gray-800 hover:text-pink-500">
+              <a href="/" className="text-gray-800 hover:text-pink-500">
                 Home
               </a>
-              <a href="#" className="text-gray-800 hover:text-pink-500">
+              <a href="/about" className="text-gray-800 hover:text-pink-500">
                 About
               </a>
               <div className="relative">
@@ -118,10 +118,10 @@ const NavigationBar = (): JSX.Element => {
       {/* Mobile menu */}
       {mobileMenuOpen && (
         <div className="sm:hidden px-4 pb-4 space-y-2 bg-[#fdf6f0] border-t border-gray-200">
-          <a href="#" className="block text-gray-800 py-1">
+          <a href="/" className="block text-gray-800 py-1">
             Home
           </a>
-          <a href="#" className="block text-gray-800 py-1">
+          <a href="/about" className="block text-gray-800 py-1">
             About
           </a>
           <details className="group">

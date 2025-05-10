@@ -1,4 +1,4 @@
-export interface IHourlies {
+export interface IBusinessHours {
   monday: string;
   tuesday: string;
   wednesday: string;
