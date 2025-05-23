@@ -12,12 +12,12 @@
 // Home
 @use './components/Home/bannerSlider.scss';
 
-// For components
+// Hair Styling *
+@use './components/HairStyling/hairStylingServices.scss';
 
 /*----- Views -----*/
 @use './views/home.scss';
-
-// For views
+@use './views/hairStyling.scss';
 
 /*----- Fonts & Icons -----*/
 

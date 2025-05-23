@@ -9,9 +9,9 @@ import type { FunctionComponent } from 'react';
 
 const BannerSlider: FunctionComponent<ImageCarouselProps> = ({ images }) => {
   return (
-    <div className="relative w-full h-[90vh] overflow-hidden mx-auto">
+    <div className="relative w-full min-h-[90vh] h-[90vh] overflow-hidden mx-auto">
       <Swiper
-      className='home-banner-swiper h-[90vh]'
+      className='home-banner-swiper min-h-[90vh] h-[90vh]'
         modules={[Navigation, Autoplay, A11y]}
         spaceBetween={20}
         slidesPerView={1}

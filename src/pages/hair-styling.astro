@@ -1,0 +1,156 @@
+---
+import Layout from "@layouts/Layout.astro"
+import NavigationBar from "@components/Navigation"
+import HairStylingServices from "@components/HairStyling/HairStylingServices"
+import Footer from "@components/Footer.astro"
+---
+
+<Layout title="Hair Styling">
+  <NavigationBar client:load />
+  <!--- Banner Section --->
+  <section
+    id="hair-styling-banner"
+    role="banner"
+    class="relative w-full min-h-[90vh] max-h-[90vh] flex flex-col justify-center items-center"
+    aria-labelledby="hair-styling-title"
+  >
+    <div id="hair-styling-banner-fig" class="w-full absolute right-0 -z-10 max-h-[90vh]">
+      <img
+        class="w-full max-h-[90vh] min-h-[90vh] object-cover object-top -z-15"
+        src="/images/hair-styling/home-hourlies-bg.webp"
+        alt="alt"
+      >
+    </div>
+    <div class="flex flex-col justify-center items-center gap-5 relative px-3">
+      <h1 class="text-4xl text-center text-white text-shadow" id="hair-styling-title">
+        Hair Styling
+      </h1>
+      <p class="text-center md:w-8/12 text-xl text-white text-shadow">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore dolore perferendis voluptatibus eveniet minima ipsa!
+      </p>
+      <div class="flex justify-center items-center gap-5">
+        <a
+          href="/contact"
+          class="white-button text-white"
+          title="Click for booking an appointment"
+          aria-label="Button for bookin an appointment"
+        >
+          Book Now
+        </a>
+        <a
+          href="#"
+          class="button-secondary"
+          title="Click for exploring more about our hair styling services"
+          aria-label="Button for exploring more about our hair styling"
+        >
+          See More
+        </a>
+      </div>
+    </div>
+  </section>
+  <!--- Accordion --->
+  <section
+    class="w-full flex flex-col gap-10 px-2 py-10 md:px-4"
+    aria-labelledby="hair-styling-services-subtitle"
+  >
+    <article
+      class="w-full flex flex-col lg:flex-row justify-center gap-10"
+      aria-label="Interactive accordion section"
+    >
+      <HairStylingServices client:visible />
+      <figure class="w-full hidden lg:flex md:w-6/12 md:pt-10 md:pr-10 lg:w-5/12">
+        <img
+          src="/images/hair-styling/hair-services.webp"
+          class="min-w-full w-full"
+          alt="alt"
+        >
+      </figure>
+    </article>
+  </section>
+  <!--- Video --->
+  <section class="relative w-full h-[85vh] overflow-hidden" aria-label="Banner video section">
+    <video
+      autoplay
+      loop
+      muted
+      playsinline
+      class="absolute inset-0 w-full h-full object-cover object-[35%] md:object-center brightness-60"
+      src="/videos/hair-styling/hair-wash.mp4"
+    ></video>
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
+      <h2 class="text-3xl md:text-5xl font-bold mb-4 text-shadow">
+        Experience, Style & Care</h2>
+      <p class="max-w-2xl text-xl text-shadow">
+        Because your hair deserves more than just a cut — it deserves care, expertise, and a touch of beauty magic.
+      </p>
+    </div>
+  </section>
+  <!--- Quality Items --->
+  <section
+    class="w-full min-h-[85vh] flex flex-col justify-center items-center lg:flex-row gap-10 lg:pl-5 py-10"
+    aria-label="Quality items descriptive section"
+    id="quality-items-section"
+  >
+    <figure class="w-11/12 lg:w-5/12 flex justify-center items-center md:mt-10" id="items-img-fig">
+      <img
+        src="/images/hair-styling/items-img.webp"
+        loading="lazy"
+        alt="alt"
+        class="w-full"
+      >
+    </figure>
+    <article class="w-11/12 lg:w-5/12 flex flex-col justify-center">
+      <h2 class="text-pink-600 text-3xl mb-5">Our Responsibility With You</h2>
+      <ul class="w-full flex flex-col gap-5 mb-5" role="list">
+        <li class="flex items-start gap-3 text-white">
+          <i class="fa-regular fa-circle-check text-pink-600 text-xl mt-1" aria-hidden="true"></i>
+          Professional, certified stylists with years of experience
+        </li>
+        <li class="flex items-start gap-3 text-white">
+          <i class="fa-regular fa-circle-check text-pink-600 text-xl mt-1" aria-hidden="true"></i>
+          Personalized consultations to match your unique style
+        </li>
+        <li class="flex items-start gap-3 text-white">
+          <i class="fa-regular fa-circle-check text-pink-600 text-xl mt-1" aria-hidden="true"></i>
+          Premium haircare products used in every treatment
+        </li>
+        <li class="flex items-start gap-3 text-white">
+          <i class="fa-regular fa-circle-check text-pink-600 text-xl mt-1" aria-hidden="true"></i>
+          Relaxing, spa-like experience from start to finish
+        </li>
+        <li class="flex items-start gap-3 text-white">
+          <i class="fa-regular fa-circle-check text-pink-600 text-xl mt-1" aria-hidden="true"></i>
+          Commitment to healthy hair and long-lasting results
+        </li>
+        <li class="flex items-start gap-3 text-white">
+          <i class="fa-regular fa-circle-check text-pink-600 text-xl mt-1" aria-hidden="true"></i>
+          Friendly staff that truly listens to your needs
+        </li>
+      </ul>
+      <div
+        class="w-full flex flex-col justify-center items-center sm:flex-row sm:justify-start gap-5 py-5"
+        aria-label="Buttons section"
+      >
+        <a
+          href="/contact"
+          class="button-secondary min-w-full w-full text-center sm:min-w-fit font-medium shadow-md"
+          title="Click for scheduling an appointment"
+          aria-label="Button for scheduling an appointment"
+        >
+          Schedule Appointment
+        </a>
+        <a
+          href="/about"
+          class="white-button text-white min-w-full w-full text-center sm:min-w-fit font-medium shadow-md"
+          title="Click for knowing more about us"
+          aria-label="Button for knowing more about us"
+        >
+          Know More About us
+        </a>
+      </div>
+    </article>
+  </section>
+
+  <!--- Footer --->
+  <Footer />
+</Layout>

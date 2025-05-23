@@ -1,0 +1,11 @@
+@use '../../includes/mixins' as mx;
+@use '../../includes/typography' as font;
+
+.szh-accordion__item-heading {
+  font-size: 2rem;
+  font-family: font.$titleFont, serif;
+}
+
+.szh-accordion__item {
+  margin-bottom: 0rem;
+}

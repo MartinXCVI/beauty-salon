@@ -15,7 +15,7 @@ import Footer from '@components/Footer.astro';
 <Layout>
 	<NavigationBar client:load />
 	<!--- Banner Section --->
-	<section class="home-banner-wrapper w-full relative over-x">
+	<section class="home-banner-wrapper w-full relative over-hidden">
 		<article class="w-full h-8/12 md:w-5/12 flex flex-col gap-5 absolute top-6/12 left-1/12 md:top-4/12 md:left-6/12 z-10">
 			<h2 class="text-3xl text-white text-shadow">Beauty Salon</h2>
 			<p class="text-xl text-white text-shadow">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora, soluta.</p>
@@ -71,7 +71,7 @@ import Footer from '@components/Footer.astro';
 			class="w-full flex flex-col md:flex-row justify-center items-center gap-5 py-10"
 			aria-labelledby="who-we-are-subtitle"
 		>
-			<div class="w-full md:w-5/12 flex flex-col gap-3">
+			<div class="w-full md:w-5/12 flex flex-col gap-3 px-5">
 				<h2 class="text-3xl" id="who-we-are-subtitle capital">
 					who we are...
 				</h2>
@@ -109,7 +109,7 @@ import Footer from '@components/Footer.astro';
 					loading="lazy"
 				>
 			</figure>
-			<div class="w-full md:w-5/12 flex flex-col gap-3">
+			<div class="w-full md:w-5/12 flex flex-col gap-3 px-5">
 				<h2 class="text-3xl" id="our-commitment-subtitle capital">our commitment...</h2>
 				<p class="text-xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae enim, eos id iure minus amet molestias quod repudiandae debitis itaque quia dignissimos modi, quo repellat? Nihil, exercitationem dolorem inventore sint rerum aliquid accusamus quibusdam veniam!</p>
 				<a

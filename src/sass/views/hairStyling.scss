@@ -1,0 +1,48 @@
+@use '../includes/mixins' as mx;
+@use '../includes/colors' as color;
+
+#hair-styling-banner {
+  &::before {
+    @include mx.bgColor(-5, color.$black, 0.4);
+    position: absolute;
+  }
+}
+
+#quality-items-section {
+  position: relative;
+  &::before {
+    width: 100%;
+    content: '';
+    inset: 0;
+    position: absolute;
+    z-index: -10;
+    background: #27272a;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+
+  #items-img-fig {
+    position: relative;
+    &::before {
+      width: 100%;
+      height: 100%;
+      @include mx.bgColor(-2, #D81B60, 0.8);
+      bottom: -20%;
+      left: -15%;
+      top: 0%;
+      right: 0%;
+      transform: translate(5%, -10%);
+    }
+    &::after {
+      width: 100%;
+      height: 100%;
+      @include mx.bgHeroImg(-5, '/images/hair-styling/items-img.webp', 1);
+      bottom: -20%;
+      left: -15%;
+      top: 0%;
+      right: 0%;
+      transform: translate(5%, -10%);
+    }
+  }
+}
