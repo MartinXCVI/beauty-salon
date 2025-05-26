@@ -1,0 +1,49 @@
+.gallery-wrapper {
+  max-width: 1200px;
+  margin: 2rem auto;
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+  -webkit-column-width: 33.3%;
+  -moz-column-width: 33.3%;
+  column-width: 33.3%;
+  column-gap: 0;
+  -webkit-column-gap: 0;
+  -moz-column-gap: 0;
+  padding: 0 1rem;
+}
+
+.gallery-fig {
+  width: 100%;
+  cursor: pointer;
+  break-inside: avoid;
+  transition: all 350ms ease;
+  &:hover {
+    filter: opacity(0.8);
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+
+@media screen and (max-width: 479px) {
+
+  .gallery-wrapper {
+    -webkit-column-count: 1;
+    column-count: 1;
+    -moz-column-count: 1;
+    column-width: 100%;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 991px) {
+
+  .gallery-wrapper {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+}

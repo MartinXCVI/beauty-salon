@@ -15,6 +15,9 @@
 // Hair Styling *
 @use './components/HairStyling/hairStylingServices.scss';
 
+// Nails
+@use './components/Nails/galleryImages.scss';
+
 /*----- Views -----*/
 @use './views/home.scss';
 @use './views/hairStyling.scss';
