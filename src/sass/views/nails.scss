@@ -1,0 +1,15 @@
+@use '../includes/mixins' as mx;
+@use '../includes/colors' as color;
+
+#nails-banner {
+  &::before {
+    @include mx.bgColor(-5, color.$black, 0.4);
+    position: absolute;
+  }
+}
+
+.description {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  word-break: break-word;
+}

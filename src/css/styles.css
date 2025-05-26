@@ -330,5 +330,23 @@ button {
     transform: translate(5%, -10%);
   }
 }
+#nails-banner::before {
+  content: "";
+  inset: 0;
+  position: absolute;
+  z-index: -5;
+  background: #151515;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.4;
+  position: absolute;
+}
+
+.description {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  word-break: break-word;
+}
 
 /*# sourceMappingURL=styles.css.map */

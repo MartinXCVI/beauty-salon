@@ -1,0 +1,152 @@
+---
+import Layout from "@layouts/Layout.astro"
+import NavigationBar from "@components/Navigation"
+import NailServiceCard from "@components/Nails/NailServiceCard.astro"
+import Footer from "@components/Footer.astro"
+---
+
+<Layout title="Nails">
+  <NavigationBar client:load />
+  <!--- Banner Section --->
+  <section
+    id="nails-banner"
+    role="banner"
+    class="relative w-full min-h-[90vh] max-h-[90vh] flex flex-col justify-center items-center"
+    aria-labelledby="nails-title"
+  >
+    <div id="nails-banner-fig" class="w-full absolute right-0 -z-10 max-h-[90vh]">
+      <img
+        class="w-full max-h-[90vh] min-h-[90vh] object-cover object-top -z-15"
+        src="/images/nails/nails-banner.webp"
+        alt="alt"
+      >
+    </div>
+    <div class="flex flex-col justify-center items-center gap-5 relative px-3">
+      <h1 class="text-4xl text-center text-white text-shadow" id="nails-title">
+        Nail Perfection, One Tip at a Time
+      </h1>
+      <p class="text-center md:w-8/12 text-xl text-white text-shadow">
+        Discover the art and care behind beautifully crafted nails.
+      </p>
+      <div class="flex justify-center items-center gap-5">
+        <a
+          href="/contact"
+          class="white-button text-white"
+          title="Click for booking an appointment"
+          aria-label="Button for bookin an appointment"
+        >
+          Book Now
+        </a>
+        <a
+          href="#"
+          class="button-secondary"
+          title="Click for exploring more about our hair styling services"
+          aria-label="Button for exploring more about our hair styling"
+        >
+          View Services
+        </a>
+      </div>
+    </div>
+  </section>
+  <!--- Services Section --->
+  <section
+    class="flex flex-col justify-center items-center p-5"
+    aria-labelledby="nails-services-title"
+  >
+    <h2 class="text-3xl md:text-5xl font-bold my-10 text-pink-700" id="nails-services-title">
+      Our Nails Services
+    </h2>
+    <div class="flex flex-col justify-center items-center md:flex-row md:items-start md:flex-wrap gap-7 py-5">
+      <NailServiceCard 
+        title="Classic Manicure"
+        image="/images/nails/nails-services/manicure.webp"
+        description="Enjoy a traditional manicure that includes nail shaping, cuticle care, a relaxing hand massage, and your choice of polish."
+      />
+  
+      <NailServiceCard 
+        title="Gel Nails"
+        image="/images/nails/nails-services/gel-nails.webp"
+        description="Get long-lasting shine and color with our chip-resistant gel manicure, featuring a flawless finish that dries instantly."
+      />
+      <NailServiceCard 
+        title="Nails Repair"
+        image="/images/nails/nails-services/nails-repair.webp"
+        description="Restore the strength and look of broken or damaged nails with our expert repair techniques using salon-grade products."
+      />
+      <NailServiceCard 
+        title="French Tips"
+        image="/images/nails/nails-services/french-tips.webp"
+        description="Timeless and elegant, our French tips offer a clean, polished look with soft white edges and a natural pink base."
+      />
+      <NailServiceCard 
+        title="Spa Pedicure"
+        image="/images/nails/nails-services/spa-pedicure.webp"
+        description="Relax with a luxurious spa pedicure that includes exfoliation, massage, nail care, and a fresh coat of long-lasting polish."
+      />
+      <NailServiceCard 
+        title="Nails Art Design"
+        image="/images/nails/nails-services/nails-art-design.webp"
+        description="Express your style with detailed nail art — from minimalist patterns to bold custom designs, all expertly hand-painted."
+      />
+    </div>
+  </section>
+  
+  <!--- Why Clients Love Us --->
+  <section
+    class="relative w-full h-[85vh] md:h-[80vh] flex items-center justify-center text-white overflow-hidden px-5 py-10"
+    aria-labelledby="why-clients-love-us-subtitle"
+  >
+    <!-- Background video -->
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      class="absolute inset-0 w-full h-full object-cover z-0"
+    >
+      <source src="/videos/nails/nails-video.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Dark overlay -->
+    <div class="absolute inset-0 bg-black/60 z-10" aria-hidden="true"></div>
+
+    <!-- Content -->
+    <div class="relative z-20 max-w-3xl mx-auto text-center px-4">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6" id="why-clients-love-us-subtitle">
+        Why Clients Love Us
+      </h2>
+      <ul class="space-y-3 text-lg text-left max-w-md mx-auto mb-10">
+        <li class="flex items-center gap-3">
+          <i class="fas fa-check-circle text-pink-400 text-xl"></i>
+          Experienced nail technicians
+        </li>
+        <li class="flex items-center gap-3">
+          <i class="fas fa-check-circle text-pink-400 text-xl"></i>
+          Clean & sanitized tools
+        </li>
+        <li class="flex items-center gap-3">
+          <i class="fas fa-check-circle text-pink-400 text-xl"></i>
+          Long-lasting quality products
+        </li>
+        <li class="flex items-center gap-3">
+          <i class="fas fa-check-circle text-pink-400 text-xl"></i>
+          Personalized designs & color consulting
+        </li>
+        <li class="flex items-center gap-3">
+          <i class="fas fa-check-circle text-pink-400 text-xl"></i>
+          Friendly, welcoming environment
+        </li>
+      </ul>
+      <a
+        href="/contact"
+        class="button-secondary"
+        aria-label="Button for booking an appointment"
+        title="Click for booking an appointment"
+      >
+        Book An Appointment
+      </a>
+    </div>
+  </section>
+  <Footer />
+</Layout>

@@ -1,5 +1,6 @@
 import type { JSX } from "react";
 import { useState } from "react";
+import { FaWhatsapp } from "react-icons/fa";
 
 const NavigationBar = (): JSX.Element => {
   
@@ -72,7 +73,7 @@ const NavigationBar = (): JSX.Element => {
                       Hair Styling
                     </a>
                     <a
-                      href="#"
+                      href="/nails"
                       className="block px-4 py-2 text-gray-700 hover:bg-pink-50"
                       role="menuitem"
                     >
@@ -95,9 +96,16 @@ const NavigationBar = (): JSX.Element => {
           </div>
 
           {/* Center logo */}
-          <div className="absolute left-1/2 transform -translate-x-1/2">
-            <a href="#" className="text-xl font-semibold text-gray-800">
-              logo
+          <div className="absolute left-1/2 transform -translate-x-1/2 sm:hidden md:block">
+            <a href="/" className="text-xl font-semibold text-gray-800">
+              <img
+                src="/images/beauty-salon-logo.png"
+                alt="Beauty salon logo"
+                className="w-13"
+                loading="lazy"
+                title="Beauty salon logo"
+                aria-label="Beauty salon logo"
+              />
             </a>
           </div>
 
@@ -107,9 +115,11 @@ const NavigationBar = (): JSX.Element => {
               href="https://wa.me/1234567890"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-full text-white bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-400"
+              className="w-[36px] h-[36px] inline-flex justify-center items-center px-2 py-2 border border-transparent text-4xl font-medium rounded-full text-white bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-400"
+              aria-label="Button for contacting us via WhatsApp"
+              title="Click for contacting us via WhatsApp"
             >
-              WhatsApp
+              <FaWhatsapp />
             </a>
           </div>
         </div>
@@ -132,7 +142,7 @@ const NavigationBar = (): JSX.Element => {
               <a href="/hair-styling" className="block text-gray-700">
                 Hair Styling
               </a>
-              <a href="#" className="block text-gray-700">
+              <a href="/nails" className="block text-gray-700">
                 Nails
               </a>
               <a href="#" className="block text-gray-700">
