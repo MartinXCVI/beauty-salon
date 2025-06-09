@@ -598,5 +598,76 @@ button {
     background-position: 70%;
   }
 }
+#error-main {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+#error-main::before {
+  content: "";
+  inset: 0;
+  position: absolute;
+  z-index: -3;
+  background: #353535;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.4;
+}
+#error-main::after {
+  content: "";
+  inset: 0;
+  position: absolute;
+  z-index: -5;
+  background-image: url("/images/error/error-404.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.8;
+  filter: blur(0.1rem);
+}
+#error-main .error-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fdfdfd;
+  text-shadow: 0 0 0.25rem #353535;
+  margin-bottom: 1rem;
+}
+#error-main .error-section .error-title {
+  font-size: 4rem;
+  margin-bottom: 1.25rem;
+}
+#error-main .error-section .error-subtitle {
+  font-size: 2.25rem;
+  margin-bottom: 0.75rem;
+}
+#error-main .error-section .error-text {
+  font-size: 1.75rem;
+  margin-bottom: 1.8rem;
+}
+
+.error-title, .error-subtitle, .error-text {
+  font-family: "Belleza", sans-serif;
+}
+
+@media all and (max-width: 991px) {
+  #error-main .error-section .error-title {
+    font-size: 3.5rem;
+  }
+  #error-main .error-section .error-subtitle {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+  #error-main .error-section .error-text {
+    font-size: 1.25rem;
+  }
+}
 
 /*# sourceMappingURL=styles.css.map */
