@@ -1,0 +1,117 @@
+---
+import Layout from "@layouts/Layout.astro"
+import NavigationBar from "@components/Navigation"
+import SkinCareServiceCard from "@components/SkinCare/SkinCareServiceCard.astro"
+import AdditionalServices from "@components/SkinCare/AdditionalServices.astro"
+import BenefitCard from "@components/SkinCare/BenefitCard.astro"
+import Footer from "@components/Footer.astro"
+---
+
+<Layout title="Skin Care">
+  <NavigationBar client:load />
+  <!--- Banner Section --->
+  <section
+    id="nails-banner"
+    role="banner"
+    class="relative w-full min-h-[90vh] max-h-[90vh] flex flex-col justify-center items-center"
+    aria-labelledby="nails-title"
+  >
+    <div id="nails-banner-fig" class="w-full absolute right-0 -z-10 max-h-[90vh]">
+      <img
+        class="w-full max-h-[90vh] min-h-[90vh] object-cover object-top -z-15"
+        src="/images/skin-care/skin-care-banner.jpg"
+        alt="alt"
+      >
+    </div>
+    <div class="flex flex-col justify-center items-center gap-5 relative px-3 mb-10">
+      <h1 class="text-4xl text-center text-white text-shadow" id="nails-title">
+        Nail Perfection, One Tip at a Time
+      </h1>
+      <p class="text-center md:w-8/12 text-xl text-white text-shadow">
+        Discover the art and care behind beautifully crafted nails.
+      </p>
+    </div>
+  </section>
+  <!--- Main Services section --->
+  <section
+    class="relative z-10 pb-10"
+    aria-label="Main services section"
+  >
+    <div class="flex flex-col justify-center items-center md:flex-row md:flex-wrap gap-12 -mt-24 px-4">
+      <SkinCareServiceCard
+        title="Signature Facial"
+        image="/images/skin-care/services/facial.webp"
+        description="A personalized, deep-cleansing facial designed to refresh and rejuvenate your skin. Includes exfoliation, steam, mask, and facial massage tailored to your skin type."
+      />
+      <SkinCareServiceCard
+        title="Anti-Aging Treatment"
+        image="/images/skin-care/services/anti-aging.webp"
+        description="Target fine lines, dullness, and loss of elasticity with our advanced anti-aging therapy. This includes collagen-boosting serums and lifting massage techniques."
+      />
+      <SkinCareServiceCard
+        title="Acne Control"
+        image="/images/skin-care/services/acne-control.webp"
+        description="Specifically designed to treat acne-prone skin by unclogging pores, reducing inflammation, and preventing future breakouts using gentle, effective products."
+      />
+    </div>
+    <div class="w-full flex justify-center pt-12">
+      <a
+        class="button-secondary text-center"
+        href="#additional-services-section"
+        aria-label="Button for seeing additional services"
+        title="Click to see Additional Services"
+      >
+        See Additional Services
+      </a>
+    </div>
+  </section>
+  <!--- Skin Care Benefits section --->
+  <section
+    class="flex flex-col justify-center items-center md:flex-row md:items-start md:flex-wrap gap-7 py-12 bg-pink-100"
+    aria-labelledby="skin-benefits-title"
+  >
+    <h2 class="text-3xl font-bold text-center mb-10 text-pink-700" id="skin-benefits-title">
+      Why Choose Our Skin Care Services
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-14">
+      <BenefitCard
+        title="Deep Relaxation"
+        icon="fas fa-spa text-pink-500"
+        description="Enjoy soothing treatments that relieve stress and leave your skin feeling refreshed and your mind at ease."
+      />
+      <BenefitCard
+        title="Natural Ingredients"
+        icon="fas fa-seedling text-green-500"
+        description="Our treatments use high-quality, skin-friendly products with botanical and organic ingredients."
+      />
+      <BenefitCard
+        title="Visible Results"
+        icon="fas fa-star text-yellow-400"
+        description="Achieve noticeable improvements in texture, tone, and hydration with regular care sessions."
+      />
+      <BenefitCard
+        title="Professional Expertise"
+        icon="fas fa-user-nurse text-indigo-500"
+        description="All services are performed by certified estheticians who understand your skin’s unique needs."
+      />
+      <BenefitCard
+        title="Customized Care"
+        icon="fas fa-heart text-red-400"
+        description="Every treatment is tailored to your skin type and goals, ensuring maximum comfort and benefit."
+      />
+      <BenefitCard
+        title="Skin Protection"
+        icon="fas fa-shield-alt text-blue-500"
+        description="Protect your skin barrier from pollution, UV exposure, and premature aging with expert care."
+      />
+    </div>
+  </section>
+  <!--- Additional Services section --->
+  <section
+    class="flex flex-col justify-center items-center md:flex-row md:items-start md:flex-wrap gap-7 py-10"
+    aria-label="Additional services section"
+  >
+    <AdditionalServices />
+  </section>
+  <Footer />
+</Layout>

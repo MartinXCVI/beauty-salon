@@ -1,0 +1,50 @@
+---
+interface AdditionalServiceBlock {
+  title: string;
+  image: string;
+  alt: string;
+  description: string;
+  reversed?: boolean;
+}
+
+const { title, image, alt, description, reversed } = Astro.props as AdditionalServiceBlock
+---
+
+<article
+  class={`flex flex-col justify-center items-center lg:flex-row gap-5 px-5 py-12 ${reversed ? "lg:flex-row-reverse" : " bg-gray-50"}`}
+  aria-labelledby={`additional-service-${title.replace(/\s+/g, '-').toLowerCase()}`}
+>
+  <figure class="lg:relative  lg:w-5/12 border-4 border-amber-200 overflow-visible">
+    <img
+      class={` w-full transition-all duration-300 shadow-md 
+        ${reversed 
+          ? "bottom-3 right-3 translate-x-3 translate-y-3" 
+          : "top-3 left-3 -translate-x-3 -translate-y-3"
+        }`
+      }
+      src={image}
+      alt={alt}
+      title={alt}
+      loading="lazy"
+    >
+  </figure>
+  <div class="w-full lg:w-7/12 lg:min-w-7/12 xl:w-6/12 xl:min-w-6/12 flex flex-col gap-5">
+    <h3
+      class="text-2xl text-pink-600"
+      id={`additional-service-${title.replace(/\s+/g, '-').toLowerCase()}`}
+    >
+      {title}
+    </h3>
+    <p class="text-xl text-gray-800">
+      {description}
+    </p>
+    <a
+      href="/contact"
+      class="button-secondary"
+      title="Click for booking an appointment"
+      aria-label="Button for booking an appointment"
+    >
+      Book An Appointment
+    </a>
+  </div>
+</article>

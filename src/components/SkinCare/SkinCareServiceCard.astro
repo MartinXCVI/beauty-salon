@@ -1,0 +1,43 @@
+---
+interface SkinCareServiceCardProps {
+  title: string
+  image: string
+  description: string
+}
+
+const { title, image, description } = Astro.props as SkinCareServiceCardProps
+---
+
+<article
+  class="w-11/12 h-fit sm:w-10/12 md:w-5/12 lg:w-3/12 relative rounded-md overflow-hidden shadow-md transition-shadow duration-300 hover:shadow-xl border border-pink-100 bg-white"
+>
+  <figure class="w-full flex justify-center items-center">
+    <img
+      src={image}
+      alt={`${title} illustration`}
+      loading="lazy"
+      class="w-full h-48 object-cover"
+      title={`${title} service illustration`}
+    />
+  </figure>
+
+  <div class="p-4">
+    <h3 class="text-xl font-semibold text-pink-700">{title}</h3>
+    <p
+      class="description w-full max-w-full  transition-all duration-500 ease-in-out text-sm text-gray-700 mt-2 whitespace-normal break-words min-w-0"
+    >
+      {description}
+    </p>
+
+    <div class="mt-4">
+      <a
+        href="/contact"
+        class="inline-block bg-pink-600 text-white px-4 py-2 text-sm hover:bg-pink-700 transition"
+        title="Click for booking an appointment"
+        aria-label="Button for booking an appointment"
+      >
+        Book Now
+      </a>
+    </div>
+  </div>
+</article>
