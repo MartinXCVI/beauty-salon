@@ -18,10 +18,14 @@
 // Nails
 @use './components/Nails/galleryImages.scss';
 
+// Contact
+@use './components/Contact/ContactForm.scss';
+
 /*----- Views -----*/
 @use './views/home.scss';
 @use './views/hairStyling.scss';
 @use './views/nails.scss';
+@use './views/contact.scss';
 
 /*----- Fonts & Icons -----*/
 

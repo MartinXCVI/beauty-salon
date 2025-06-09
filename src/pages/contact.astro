@@ -1,0 +1,17 @@
+---
+import Layout from "@layouts/Layout.astro"
+import Navigation from "@components/Navigation"
+import ContactForm from "@components/Contact/ConctactForm.astro"
+import Footer from "@components/Footer.astro"
+---
+
+<Layout title="Contact page">
+  <Navigation />
+  <section class="contact-wrapper" aria-label="Contact form wrapper section">
+    <ContactForm />
+  </section>
+  <Footer />
+  <!--- Scripts --->
+  <script src="../helpers/contactSubmit.ts"></script>
+	<script src="../helpers/contactValidation.ts"></script>
+</Layout>

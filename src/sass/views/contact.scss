@@ -1,0 +1,27 @@
+@use '../includes/colors' as color;
+@use '../includes/mixins' as mx;
+@use '../includes/typography' as font;
+@use '../includes/variables' as var;
+
+.contact-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  z-index: 10;
+  &::before {
+    @include mx.bgColor(-3, color.$softerBlack, 0.1);
+  }
+  &::after {
+    @include mx.bgHeroImg(-5, '/images/contact/contact-bg.webp', 0.7);
+  }
+}
+
+
+@media all and (max-width: 767px) {
+
+  .contact-wrapper {
+    &::after {
+      background-position: 70%;
+    }
+  }
+}

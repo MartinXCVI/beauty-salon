@@ -89,7 +89,7 @@ const NavigationBar = (): JSX.Element => {
                   </div>
                 )}
               </div>
-              <a href="#" className="text-gray-800 hover:text-pink-500">
+              <a href="/contact" className="text-gray-800 hover:text-pink-500">
                 Contact
               </a>
             </div>
@@ -150,7 +150,7 @@ const NavigationBar = (): JSX.Element => {
               </a>
             </div>
           </details>
-          <a href="#" className="block text-gray-800 py-1">
+          <a href="/contact" className="block text-gray-800 py-1">
             Contact
           </a>
         </div>

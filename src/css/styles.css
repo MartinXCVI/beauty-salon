@@ -160,6 +160,176 @@ button {
     column-count: 2;
   }
 }
+.form-wrapper {
+  width: 45%;
+  min-width: 45%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  position: relative;
+}
+.form-wrapper::before {
+  transition: 0.3s linear all;
+  content: "";
+  inset: 0;
+  position: absolute;
+  z-index: -3;
+  background: #151515;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.5;
+}
+.form-wrapper:hover::before {
+  opacity: 0.9;
+}
+.form-wrapper .contact-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fdfdfd;
+}
+
+.contact-field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #fdfdfd;
+}
+.contact-field legend {
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  padding-inline: 1rem;
+}
+.contact-field .contact-div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+.contact-field .contact-div .form-label {
+  width: 100%;
+  padding-left: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+.contact-field .contact-div .form-input {
+  width: 100%;
+  padding: 0.25rem 0.75rem;
+  background-color: transparent;
+  border: 1px solid #fdfdfd;
+}
+.contact-field .contact-div .form-textarea {
+  width: 100%;
+  resize: none;
+  padding: 0.25rem 0.75rem;
+  background-color: transparent;
+  border: 1px solid #fdfdfd;
+}
+.contact-field .contact-div .contact-input {
+  transition: 0.3s linear all;
+}
+.contact-field .contact-div .contact-input:focus {
+  outline: 1px solid #fdfdfd;
+}
+.contact-field .contact-div .contact-input::placeholder {
+  color: #f6f6f6;
+}
+
+.form-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1rem;
+}
+.form-buttons .form-btn {
+  width: 10rem;
+  padding: 0.5rem 1rem;
+  transition: 0.3s linear all;
+  font-size: 1rem;
+}
+.form-buttons .send-btn {
+  background-color: #c2185b;
+  color: #fdfdfd;
+  border: 1px solid #c2185b;
+  border-radius: 3rem;
+}
+.form-buttons .send-btn:hover {
+  background-color: #f6339a;
+  color: #fdfdfd;
+  border-color: #f6339a;
+}
+.form-buttons .clear-btn {
+  background-color: #fdf6f0;
+  color: #151515;
+  border: 1px solid #fdf6f0;
+  border-radius: 3rem;
+}
+.form-buttons .clear-btn:hover {
+  background-color: #151515;
+  color: #fdfdfd;
+  border-color: #fdfdfd;
+}
+
+@media all and (max-width: 480px) {
+  .form-wrapper {
+    padding: 3rem 1rem;
+  }
+  .form-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0rem;
+  }
+  .form-buttons .form-btn {
+    width: 100%;
+  }
+  .form-buttons .send-btn {
+    margin-bottom: 0.75rem;
+  }
+}
+@media all and (min-width: 481px) and (max-width: 575px) {
+  .form-wrapper .contact-form {
+    width: 90%;
+  }
+}
+@media all and (min-width: 576px) and (max-width: 767px) {
+  .form-wrapper .contact-form {
+    width: 75%;
+  }
+}
+@media all and (max-width: 767px) {
+  .form-wrapper {
+    width: 100%;
+  }
+}
+@media all and (min-width: 768px) and (max-width: 991px) {
+  .form-wrapper {
+    width: 55%;
+  }
+  .form-buttons .form-btn {
+    width: 9rem;
+  }
+}
+@media all and (min-width: 992px) and (max-width: 1200px) {
+  .form-wrapper {
+    width: 50%;
+  }
+  .form-buttons .form-btn {
+    width: 9.5rem;
+  }
+}
 /*----- Views -----*/
 .home-banner-wrapper::before {
   content: "";
@@ -392,6 +562,41 @@ button {
   width: 100% !important;
   box-sizing: border-box !important;
   word-break: break-word;
+}
+
+.contact-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  z-index: 10;
+}
+.contact-wrapper::before {
+  content: "";
+  inset: 0;
+  position: absolute;
+  z-index: -3;
+  background: #353535;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.1;
+}
+.contact-wrapper::after {
+  content: "";
+  inset: 0;
+  position: absolute;
+  z-index: -5;
+  background-image: url("/images/contact/contact-bg.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.7;
+}
+
+@media all and (max-width: 767px) {
+  .contact-wrapper::after {
+    background-position: 70%;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
