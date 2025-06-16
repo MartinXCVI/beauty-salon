@@ -1,0 +1,9 @@
+@use '../includes/mixins' as mx;
+@use '../includes/colors' as color;
+
+#massages-banner {
+  &::before {
+    @include mx.bgColor(-5, color.$black, 0.4);
+    position: absolute;
+  }
+}

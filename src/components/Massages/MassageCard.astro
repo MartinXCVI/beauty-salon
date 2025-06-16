@@ -1,0 +1,31 @@
+---
+import type { IMassageCard } from "@interfaces/IMassageCard"
+
+const { title, image, description } = Astro.props as IMassageCard
+---
+
+<article
+  class="bg-white shadow-md rounded-lg overflow-hidden flex flex-col xl:flex-row"
+>
+  <figure class="w-full xl:w-5/12 h-64 overflow-hidden">
+    <img
+      src={image}
+      alt={`${title} illustration`}
+      class="w-full h-full object-cover"
+      loading="lazy"
+      title={`${title} illustration`}
+    />
+  </figure>
+  <div class="flex flex-col flex-grow p-4 xl:w-5/12">
+    <h3 class="text-lg font-semibold text-gray-800 mb-2">{title}</h3>
+    <p class="text-sm text-gray-600 flex-grow">{description}</p>
+    <a
+      href="/contact"
+      class="mt-2 inline-block bg-pink-500 hover:bg-pink-600 text-white text-sm font-medium px-4 py-2 rounded transition"
+      title="Click for booking an appointment"
+      aria-label="Button for booking an appointment"
+    >
+      Book Appointment
+    </a>
+  </div>
+</article>

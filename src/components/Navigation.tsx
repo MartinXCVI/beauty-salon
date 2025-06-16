@@ -44,7 +44,7 @@ const NavigationBar = (): JSX.Element => {
             </button>
 
             {/* Desktop menu */}
-            <div className="hidden sm:flex space-x-6">
+            <div className="hidden sm:flex space-x-6 z-50">
               <a href="/" className="text-gray-800 hover:text-pink-500">
                 Home
               </a>
@@ -85,6 +85,13 @@ const NavigationBar = (): JSX.Element => {
                       role="menuitem"
                     >
                       Skin Care
+                    </a>
+                    <a
+                      href="/massages"
+                      className="block px-4 py-2 text-gray-700 hover:bg-pink-50"
+                      role="menuitem"
+                    >
+                      Massages
                     </a>
                   </div>
                 )}
@@ -127,7 +134,7 @@ const NavigationBar = (): JSX.Element => {
 
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="sm:hidden px-4 pb-4 space-y-2 bg-[#fdf6f0] border-t border-gray-200">
+        <div className="sm:hidden px-4 pb-4 space-y-2 bg-[#fdf6f0] border-t border-gray-200 z-50">
           <a href="/" className="block text-gray-800 py-1">
             Home
           </a>
@@ -148,6 +155,9 @@ const NavigationBar = (): JSX.Element => {
               <a href="/skin-care" className="block text-gray-700">
                 Skin Care
               </a>
+              <a href="/massages" className="block text-gray-700">
+                Massages
+              </a>
             </div>
           </details>
           <a href="/contact" className="block text-gray-800 py-1">
@@ -156,7 +166,7 @@ const NavigationBar = (): JSX.Element => {
         </div>
       )}
     </nav>
-  );
+  )
 }
 
 export default NavigationBar

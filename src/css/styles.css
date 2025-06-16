@@ -564,6 +564,19 @@ button {
   word-break: break-word;
 }
 
+#massages-banner::before {
+  content: "";
+  inset: 0;
+  position: absolute;
+  z-index: -5;
+  background: #151515;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.4;
+  position: absolute;
+}
+
 .contact-wrapper {
   width: 100%;
   min-height: 100vh;

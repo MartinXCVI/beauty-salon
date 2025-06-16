@@ -1,0 +1,157 @@
+---
+import { massages } from "@data/massages"
+
+import Layout from "@layouts/Layout.astro";
+import NavigationBar from "@components/Navigation";
+import MassageCard from "@components/Massages/MassageCard.astro";
+import MassageBenefits from "@components/Massages/MassageBenefits.astro";
+import Footer from "@components/Footer.astro";
+---
+
+<Layout title="Massages">
+  <NavigationBar client:load />
+  <!--- Banner Section --->
+  <section
+    id="massages-banner"
+    role="banner"
+    class="relative w-full min-h-[90vh] max-h-[90vh] flex flex-col justify-center items-center"
+    aria-labelledby="massages-title"
+  >
+    <div id="massages-banner-fig" class="w-full absolute right-0 -z-10 max-h-[90vh]">
+      <img
+        class="w-full max-h-[90vh] min-h-[90vh] object-cover object-center -z-15"
+        src="/images/massages/massages-banner.webp"
+        alt="alt"
+      >
+    </div>
+    <div class="flex flex-col justify-center items-center gap-5 relative px-3">
+      <h1 class="text-4xl text-center text-white text-shadow" id="massages-title">
+        Relaxing Massages
+      </h1>
+      <p class="text-center md:w-8/12 text-xl text-white text-shadow">
+        Let tension melt away with our professional massage services
+      </p>
+      <div class="flex justify-center items-center gap-5">
+        <a
+          href="/contact"
+          class="white-button text-white"
+          title="Click for booking an appointment"
+          aria-label="Button for bookin an appointment"
+        >
+          Book Now
+        </a>
+        <a
+          href="#massage-services"
+          class="button-secondary"
+          title="Click for exploring more about our hair styling services"
+          aria-label="Button for exploring more about our hair styling"
+        >
+          View Services
+        </a>
+      </div>
+    </div>
+  </section>
+  <!--- Services Section --->
+  <section
+    class="flex flex-col justify-center items-center px-5 py-20"
+    aria-labelledby="massages-services-title"
+    id="massage-services"
+  >
+    <h2 class="text-3xl md:text-5xl text-center font-bold mb-10 text-pink-700" id="massages-services-title">
+      Massage Treatments We Offer
+    </h2>
+    <!--- Massages cards rendering --->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      {massages.map((massage): void => (
+        <MassageCard
+          title={massage.title}
+          image={massage.image}
+          description={massage.description}
+        />
+      ))}
+    </div>
+  </section>
+  <!--- First video --->
+  <section class="relative w-full h-[85vh] overflow-hidden" aria-label="Banner video section">
+    <video
+      autoplay
+      loop
+      muted
+      playsinline
+      class="absolute inset-0 w-full h-full object-cover object-[35%] md:object-center "
+      src="/videos/massages/massage-1.mp4"
+    ></video>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/30 to-transparent z-0"></div>
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
+      <h2 class="text-3xl md:text-5xl font-bold mb-4 text-shadow">
+        Reclaim Your Calm
+      </h2>
+      <p class="max-w-2xl text-xl text-shadow">
+         Discover the healing power of touch with massages that restore balance, ease tension, and renew your spirit.
+      </p>
+    </div>
+  </section>
+  <!--- Massage benefits section between the two videos --->
+  <MassageBenefits />
+  <!--- Second video --->
+  <section class="relative w-full h-[85vh] overflow-hidden" aria-label="Banner video section">
+    <video
+      autoplay
+      loop
+      muted
+      playsinline
+      class="absolute inset-0 w-full h-full object-cover object-[35%] md:object-center"
+      src="/videos/massages/massage-2.mp4"
+    ></video>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/30 to-transparent z-0"></div>
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
+      <h2 class="text-3xl md:text-5xl font-bold mb-4 text-shadow">
+        More Than Just Relaxation
+      </h2>
+      <p class="max-w-2xl text-xl text-shadow">
+        Our expert massage therapies blend comfort and care to leave your body lighter, your mind quieter, and your soul refreshed.
+      </p>
+    </div>
+  </section>
+  <!--- Final contact section --->
+  <section
+    class="bg-gradient-to-br from-pink-100 to-white py-24 px-6 lg:px-20"
+    aria-labelledby="final-contact-subtitle"
+  >
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-12">
+      <!-- Call to action -->
+      <div class="text-center md:text-left">
+        <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-800 leading-tight mb-6" id="final-contact-subtitle">
+          Step Into Stillness,<br class="hidden sm:inline" />
+          Book Your Escape
+        </h2>
+        <p class="text-lg text-gray-700 pb-5 max-w-md">
+          Reconnect with calm. Let your tension melt away under expert hands and soothing care. Your body is speaking — it’s time to listen.
+        </p>
+        <a
+          href="/contact"
+          class="button-secondary"
+          title="Click for booking an appointment"
+          aria-label="Button for booking an appointment"
+        >
+          Book a Moment of Calm
+        </a>
+      </div>
+      <!-- Decorative image -->
+      <div class="relative group  shadow-2xl">
+        <figure class="w-full h-full lg:relative border-4 border-pink-300 overflow-visible">
+          <img
+            src="/images/massages/massage-final.webp"
+            alt="Soft ambient spa setting"
+            class="w-full h-full  transition-transform duration-700 bottom-3 right-3 translate-x-3 translate-y-3"
+            loading="lazy"
+          />
+        </figure>
+        <div class="absolute bottom-2 right-3 z-20 bg-white/80 text-pink-700 px-4 py-1 text-sm font-semibold shadow backdrop-blur-sm">
+          Serenity, Delivered
+        </div>
+      </div>
+    </div>
+  </section>
+  <Footer />
+</Layout>
