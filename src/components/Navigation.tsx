@@ -66,6 +66,13 @@ const NavigationBar = (): JSX.Element => {
                     role="menu"
                   >
                     <a
+                      href="/services"
+                      className="block px-4 py-2 text-gray-700 hover:bg-pink-50"
+                      role="menuitem"
+                    >
+                      All Services
+                    </a>
+                    <a
                       href="/hair-styling"
                       className="block px-4 py-2 text-gray-700 hover:bg-pink-50"
                       role="menuitem"
@@ -146,6 +153,9 @@ const NavigationBar = (): JSX.Element => {
               Services
             </summary>
             <div className="ml-4 mt-1 space-y-1">
+              <a href="/services" className="block text-gray-700">
+                All Services
+              </a>
               <a href="/hair-styling" className="block text-gray-700">
                 Hair Styling
               </a>

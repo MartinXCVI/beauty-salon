@@ -1,0 +1,60 @@
+---
+import Layout from "@layouts/Layout.astro";
+import NavigationBar from "@components/Navigation";
+import ServiceBlock from "@components/Services/ServiceBlock.astro";
+import Footer from "@components/Footer.astro";
+---
+
+<Layout title="Services">
+  <NavigationBar client:load />
+  <!--- Banner Section --->
+  <section
+    id="all-services-banner"
+    role="banner"
+    class="relative w-full min-h-[90vh] max-h-[90vh] flex flex-col justify-center items-center"
+    aria-labelledby="nails-title"
+  >
+    <div id="nails-banner-fig" class="w-full absolute right-0 -z-10 min-h-[90vh] max-h-[90vh]">
+      <img
+        class="w-full min-h-[90vh] max-h-[90vh] object-cover object-top -z-15"
+        src="/images/services/all-services-banner.webp"
+        alt="alt"
+      >
+    </div>
+    <div class="flex flex-col justify-center items-center gap-5 relative px-3 mb-10">
+      <h1 class="text-4xl text-center text-white text-shadow" id="nails-title">
+        Indulge in Beauty, Relaxation, and Self-Care
+      </h1>
+      <p class="text-center md:w-8/12 text-xl text-white text-shadow">
+        Explore our range of professional beauty treatments designed to make you look and feel your absolute best
+      </p>
+    </div>
+  </section>
+  <main>
+    <ServiceBlock
+      image="/images/services/hair-styling-service.webp"
+      title="Hair Styling"
+      slogan="Your hair, your crown — styled to perfection."
+      description="Step into a world where every strand matters. Our professional stylists blend creativity with precision to craft hairstyles that enhance your natural beauty, reflect your personality, and boost your confidence. From classic cuts to modern trends, we make your vision come to life."
+    />
+    <ServiceBlock
+      image="/images/services/massage-service.webp"
+      title="Massages"
+      slogan="Release the stress — restore your body and soul."
+      description="Enjoy a revitalizing massage experience tailored to your body's needs. Our expert therapists use soothing techniques to relieve tension, improve circulation, and promote deep relaxation. Step away from the noise and reconnect with your well-being in a serene environment."
+    />
+    <ServiceBlock
+      image="/images/services/nails-service.webp"
+      title="Nails Services"
+      slogan="Elegant nails, detailed to perfection."
+      description="Let your hands speak style and confidence. We offer precision manicures, flawless gel finishes, and creative nail art to match your unique personality. Whether you're after subtle elegance or bold designs, your nails will always leave a lasting impression."
+    />
+    <ServiceBlock
+      image="/images/services/skin-care-service.webp"
+      title="Skin Care"
+      slogan="Glow starts with the right care."
+      description="Reveal your skin's natural radiance with treatments tailored to cleanse, hydrate, and rejuvenate. From deep cleansing facials to anti-aging therapies, our skincare experts use premium products and gentle techniques to leave your skin soft, refreshed, and glowing."
+    />
+  </main>
+  <Footer />
+</Layout>
