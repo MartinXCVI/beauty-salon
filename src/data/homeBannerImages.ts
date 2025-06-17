@@ -11,7 +11,7 @@ export const homeBannerImages: ICarouselImage[] = [
   },
   {
     src: "/images/home-banner/banner-3.webp",
-    alt: "Makeup artist working with a customer"
+    alt: "Nails artist working with a customer"
   },
   {
     src: "/images/home-banner/banner-4.webp",
@@ -24,5 +24,17 @@ export const homeBannerImages: ICarouselImage[] = [
   {
     src: "/images/home-banner/banner-6.webp",
     alt: "Skin care professional working with a customer"
+  },
+  {
+    src: "/images/home-banner/banner-7.webp",
+    alt: "Massages professional working with a customer"
+  },
+  {
+    src: "/images/home-banner/banner-8.webp",
+    alt: "Makeup professional working with a customer"
+  },
+  {
+    src: "/images/home-banner/banner-9.webp",
+    alt: "Relaxed customer ready to take a bath in the spa"
   },
 ]
