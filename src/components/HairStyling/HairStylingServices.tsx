@@ -18,7 +18,7 @@ const AccordionItem = ({ header, ...rest }: IAccordionItemProps) => {
       {...rest}
       header={({ state: { isEnter } }) => (
         <div className="flex items-center justify-between w-full py-4 px-4 border-b border-pink-200">
-          <span className="text-lg font-medium text-pink-800">{header}</span>
+          <h3 className="text-lg font-medium text-pink-800">{header}</h3>
           <div className={`transition-transform duration-300 ${isEnter ? "rotate-180" : ""}`}>
             <MdArrowDropDown className="w-8 h-8 text-pink-500" aria-hidden="true" />
           </div>
@@ -26,7 +26,7 @@ const AccordionItem = ({ header, ...rest }: IAccordionItemProps) => {
       )}
       className="mb-2 overflow-hidden border-b-1 border-zinc-400"
       buttonProps={{
-        className: "w-full focus:outline-none hover:bg-pink-50 transition-colors",
+        className: "w-full hover:bg-pink-50 transition-colors",
         onClick: () => setIsOpen(prev => !prev)
       }}
       contentProps={{
