@@ -8,6 +8,10 @@
   list-style: none;
   font-family: "Open Sans", system-ui, sans-serif;
 }
+*::selection {
+  background-color: #f6339a;
+  color: #fdf6f0;
+}
 
 html {
   scroll-behavior: smooth;
@@ -104,6 +108,9 @@ button {
 /*----- Components -----*/
 .home-banner-swiper .swiper-button-prev, .home-banner-swiper .swiper-button-next {
   color: #202020;
+}
+.home-banner-swiper .swiper-button-prev::after, .home-banner-swiper .swiper-button-next::after {
+  font-size: 1.5rem;
 }
 
 .szh-accordion__item-heading {
@@ -355,7 +362,7 @@ button {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 0.3;
+  opacity: 0.5;
 }
 #hourlies-section::after {
   content: "";
@@ -467,7 +474,7 @@ button {
     inset: 0;
     position: absolute;
     z-index: -5;
-    background-image: url("/images/home-about/home-about-1.webp");
+    background-image: url("/images/home-about/home-about-2.webp");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

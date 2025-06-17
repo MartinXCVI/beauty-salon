@@ -15,11 +15,24 @@ import Footer from '@components/Footer.astro';
 <Layout>
 	<NavigationBar client:load />
 	<!--- Banner Section --->
-	<section class="home-banner-wrapper w-full relative over-hidden">
-		<article class="w-full h-8/12 md:w-5/12 flex flex-col gap-5 absolute top-6/12 left-1/12 md:top-4/12 md:left-6/12 z-10">
-			<h2 class="text-3xl text-white text-shadow">Beauty Salon</h2>
-			<p class="text-xl text-white text-shadow">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora, soluta.</p>
-			<a href="#" class="w-fit text-xl text-white text-shadow border-2 border-amber-100 px-3 py-2">Reservation</a>
+	<section class="home-banner-wrapper min-h-screen w-full relative over-hidden">
+		<article
+		class="absolute top-1/2 left-1/2 z-10 min-w-56 max-w-xl -translate-x-1/2 -translate-y-1/2 
+    bg-white/10 backdrop-blur-xs rounded-sm p-6 shadow-xl text-center text-white space-y-4"
+		>
+			<h1 class="text-4xl md:text-5xl font-bold drop-shadow-md text-shadow tracking-wide">
+				Awaken Your Beauty
+			</h1>
+			<p class="text-lg md:text-xl leading-relaxed drop-shadow-sm text-shadow">
+      	A sanctuary of elegance and care. Indulge in personalized treatments that leave you glowing — inside and out.
+    	</p>
+			<a
+				href="/contact"
+				class="inline-block mt-4 px-6 py-3 border-2 border-amber-200 text-white text-base md:text-lg
+				hover:bg-amber-100 hover:text-black transition-all duration-300 text-shadow hover-shadowless"
+			>
+				Book A Session
+			</a>
 		</article>
 		<BannerSlider images={homeBannerImages} client:visible />
 	</section>
@@ -28,32 +41,35 @@ import Footer from '@components/Footer.astro';
 		class="min-h-screen flex flex-col justify-center items-center py-10 bg-zinc-800"
 		aria-labelledby="home-services-title"
 	>
-		<h2 class="capital text-3xl text-center mb-4 text-white" id="home-services-title">
+		<h2 class="capital text-4xl text-center mb-4 text-white" id="home-services-title">
 			our main services
 		</h2>
-		<p class="text-center max-w-8/12 text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur veritatis molestiae odit magni voluptatibus perspiciatis aliquam deserunt, accusamus maxime dolores.</p>
+		<p class="text-center max-w-8/12 text-white">
+			Discover our essential services tailored to help you look and feel radiant. From elegant hairstyles to nourishing skincare and flawless nails, each treatment is designed with care, precision, and a touch of indulgence.
+		</p>
 		<article
 			class="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-2 py-5"
 			aria-label="Main services cards section"
+			role="list"
 		>
 			<ServiceCard
 				src="/images/home-services/service-1.webp"
 				alt="Hair stylist cutting the hair of a woman"
 				title="Hair Styling"
-				description="description description description"
+				description="Custom haircuts, blowouts, and styles that reflect your personality — crafted by expert hands to leave you confident and radiant."
 			/>
 			<ServiceCard
 				src="/images/home-services/service-2.webp"
 				alt="Person holding a jar of skin cream"
 				title="Skin Care"
-				description="description description description"
+				description="Facials and treatments that nourish your skin, target concerns, and leave your complexion glowing with health and beauty."
 			/>
-		<ServiceCard
-			src="/images/home-services/service-3.webp"
-			alt="Professional cleaning a client's nails"
-			title="Nails Work"
-			description="description description description"
-		/>
+			<ServiceCard
+				src="/images/home-services/service-3.webp"
+				alt="Professional cleaning a client's nails"
+				title="Nails Work"
+				description="Perfect manicures and pedicures, vibrant colors, and long-lasting finishes — because your hands and feet deserve love too."
+			/>
 		</article>
 		<a
 			class="text-white white-button"
@@ -72,10 +88,12 @@ import Footer from '@components/Footer.astro';
 			aria-labelledby="who-we-are-subtitle"
 		>
 			<div class="w-full md:w-5/12 flex flex-col gap-3 px-5">
-				<h2 class="text-3xl" id="who-we-are-subtitle capital">
+				<h2 class="text-3xl text-pink-700" id="who-we-are-subtitle capital">
 					who we are...
 				</h2>
-				<p class="text-xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae enim, eos id iure minus amet molestias quod repudiandae debitis itaque quia dignissimos modi, quo repellat? Nihil, exercitationem dolorem inventore sint rerum aliquid accusamus quibusdam veniam!</p>
+				<p class="text-xl">
+					At our beauty salon, we believe in enhancing the natural beauty of every individual. Our team of passionate professionals brings years of experience, creativity, and care to every service — making each visit a celebration of you.
+				</p>
 				<a
 					class="black-button"
 					href="/about"
@@ -87,9 +105,9 @@ import Footer from '@components/Footer.astro';
 			</div>
 			<figure class="w-full md:w-5/12 flex justify-center items-center bg-amber-50" id="who-we-are-fig">
 				<img
-					class="w-full"
+					class="w-full hover:brightness-110 duration-300 transition-all"
 					src="/images/home-about/home-about-1.webp"
-					alt="alt"
+					alt="Beauty salon illustration"
 					title="title"
 					loading="lazy"
 				>
@@ -102,16 +120,20 @@ import Footer from '@components/Footer.astro';
 		>
 			<figure class="w-full md:w-5/12 flex justify-center items-center" id="our-commitment-fig">
 				<img
-					class="w-full"
-					src="/images/home-about/home-about-1.webp"
+					class="w-full hover:brightness-110 duration-300 transition-all"
+					src="/images/home-about/home-about-2.webp"
 					alt="alt"
 					title="title"
 					loading="lazy"
 				>
 			</figure>
 			<div class="w-full md:w-5/12 flex flex-col gap-3 px-5">
-				<h2 class="text-3xl" id="our-commitment-subtitle capital">our commitment...</h2>
-				<p class="text-xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae enim, eos id iure minus amet molestias quod repudiandae debitis itaque quia dignissimos modi, quo repellat? Nihil, exercitationem dolorem inventore sint rerum aliquid accusamus quibusdam veniam!</p>
+				<h2 class="text-3xl text-pink-700" id="our-commitment-subtitle capital">
+					our commitment...
+				</h2>
+				<p class="text-xl">
+					We are dedicated to creating a relaxing and inspiring environment where beauty meets wellness. With high-quality products, personalized attention, and a commitment to hygiene and excellence, we make your self-care journey both luxurious and safe.
+				</p>
 				<a
 					class="black-button"
 					href="/contact"
@@ -132,10 +154,10 @@ import Footer from '@components/Footer.astro';
 		aria-label="Motivational quote final section"
 	>
 		<blockquote class="max-w-10/12 md:max-w-8/12 flex flex-col justify-center items-center text-shadow">
-			<p class="text-2xl text-center text-white">
+			<p class="text-3xl text-center text-white italic leading-relaxed">
 				<q>Beauty begins the moment you decide to be yourself.</q>
 			</p>
-			<cite class="w-full text-2xl text-center text-white">—Coco Chanel</cite>
+			<cite class="mt-4 block text-2xl not-italic text-white">—Coco Chanel</cite>
 		</blockquote>
 	</section>
 	<!--- Footer Section --->

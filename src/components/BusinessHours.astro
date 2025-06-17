@@ -5,28 +5,30 @@ const { monday, tuesday, wednesday, thursday, friday, saturday, sunday } = busin
 ---
 
 <section
-id="hourlies-section"
-class="min-h-screen flex flex-col justify-center items-center gap-8"
-aria-labelledby="hourlies-subtitle"
+  id="hourlies-section"
+  class="min-h-screen flex flex-col justify-center items-center gap-8"
+  aria-labelledby="hourlies-subtitle"
 >
 <h2 class="text-4xl text-white text-shadow" id="hourlies-subtitle">
-  Hourlies <i class="fa-regular fa-clock"></i>
+  Business Hours <i class="fa-regular fa-clock" aria-hidden="true"></i>
 </h2>
-<ul class="hourlies flex flex-col justify-center items-center text-white text-2xl gap-4 text-shadow">
-  <li>Monday {monday}</li>
-  <li>Tuesday {tuesday}</li>
-  <li>Wednesday {wednesday}</li>
-  <li>Thursday {thursday}</li>
-  <li>Friday {friday}</li>
-  <li>Saturday {saturday}</li>
-  <li>Sunday {sunday}</li>
-</ul>
+<dl class="text-white text-2xl flex flex-col items-center gap-3 text-shadow">
+  <div>
+    <dt class="inline font-semibold">Monday:</dt> <dd class="inline ml-2">{monday}</dd>
+  </div>
+  <div><dt class="inline font-semibold">Tuesday:</dt> <dd class="inline ml-2">{tuesday}</dd></div>
+  <div><dt class="inline font-semibold">Wednesday:</dt> <dd class="inline ml-2">{wednesday}</dd></div>
+  <div><dt class="inline font-semibold">Thursday:</dt> <dd class="inline ml-2">{thursday}</dd></div>
+  <div><dt class="inline font-semibold">Friday:</dt> <dd class="inline ml-2">{friday}</dd></div>
+  <div><dt class="inline font-semibold">Saturday:</dt> <dd class="inline ml-2">{saturday}</dd></div>
+  <div><dt class="inline font-semibold">Sunday:</dt> <dd class="inline ml-2">{sunday}</dd></div>
+</dl>
 <a
-  href=""
+  href="/contact"
   class="white-button text-white text-shadow hover-shadowless"
   aria-label="Button for booking and appointment"
   title="Click for booking and appointment"
 >
-  Book An Appointment <i class="fa-regular fa-calendar-check"></i>
+  Book An Appointment <i class="fa-regular fa-calendar-check" aria-hidden="true"></i>
 </a>
 </section>

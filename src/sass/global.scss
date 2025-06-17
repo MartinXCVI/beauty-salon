@@ -5,10 +5,13 @@
 
 
 * {
-
   box-sizing: border-box;
   list-style: none;
   font-family: font.$textFont;
+  &::selection {
+    background-color: color.$secondColor;
+    color: color.$firstColor;
+  }
 }
 
 html {

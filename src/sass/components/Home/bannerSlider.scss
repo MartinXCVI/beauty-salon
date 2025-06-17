@@ -3,5 +3,8 @@
 .home-banner-swiper {
   .swiper-button-prev, .swiper-button-next {
     color: color.$lightBlack;
+    &::after {
+      font-size: 1.5rem;
+    }
   }
 }
