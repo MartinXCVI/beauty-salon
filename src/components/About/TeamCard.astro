@@ -4,24 +4,24 @@ import type { ITeamCard } from '@interfaces/ITeamCard'
 const { src, alt, name, job, description } = Astro.props as ITeamCard
 ---
 
-<article class="w-full sm:w-5/12 md:w-3/12 flex flex-col justify-center items-center gap-3 py-2 sm:p-2 mb-5">
+<article class="w-full sm:w-5/12 md:w-3/12 flex flex-col justify-center items-center gap-2 py-2 sm:p-2 mb-5">
   <figure class="w-full flex justify-center items-center">
     <img
-      class="w-full"
+      class="w-full hover:brightness-110 hover:rounded-xl transition-all duration-500"
       src={src}
-      alt={alt}
-      title={alt}
+      alt={`${alt} portrait`}
+      title={`${alt} portrait`}
       loading="lazy"
     >
   </figure>
-  <h3 class="text-2xl">{name}</h3>
-  <h4 class="text-xl italic">{job}</h4>
-  <p class="text-center">{description}</p>
+  <h3 class="text-2xl font-semibold text-center text-pink-700">{name}</h3>
+  <h4 class="text-lg italic text-center text-zinc-700">{job}</h4>
+  <p class="text-center text-base px-2">{description}</p>
   <a
     class="border-1 border-zinc-950 px-3 py-2 black-button"
     href="/contact"
-    aria-label="Button for booking an appointment"
-    title="Click for booking an appointment"
+    aria-label={`Button for booking an appointment with ${name}`}
+    title={`Book an appointment with ${name}`}
   >
     Book an appointment
   </a>
