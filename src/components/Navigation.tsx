@@ -113,7 +113,7 @@ const NavigationBar = (): JSX.Element => {
           <div className="absolute left-1/2 transform -translate-x-1/2 sm:hidden md:block">
             <a href="/" className="text-xl font-semibold text-gray-800">
               <img
-                src="/images/beauty-salon-logo.png"
+                src="/images/beauty-salon-logo.webp"
                 alt="Beauty salon logo"
                 className="w-13"
                 loading="lazy"
