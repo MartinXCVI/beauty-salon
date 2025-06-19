@@ -30,19 +30,40 @@ const BannerSlider: FunctionComponent<ImageCarouselProps> = ({ images }) => {
         }}
         aria-live='polite'
       >
-        {images.map((image, index) => (
-          <SwiperSlide key={index}>
-            <div className="relative w-full h-screen">
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="w-full h-full object-cover brightness-[.85] transition-transform
-                duration-700 ease-in-out scale-100 hover:scale-105 cursor-grab"
-              />
-              <div className="absolute inset-0 bg-black/20" aria-hidden="true" />
-            </div>
-          </SwiperSlide>
-        ))}
+        {images.map((image, index) => {
+          const isWebp = image.src.endsWith('.webp');
+          const mobileSrc = isWebp
+            ? image.src.replace('.webp', '-mobile.webp')
+            : image.src;
+        
+          return (
+            <SwiperSlide key={index}>
+              <div className="relative w-full h-screen">
+                <picture>
+                  <source
+                    srcSet={mobileSrc}
+                    media="(max-width: 768px)"
+                    type="image/webp"
+                  />
+                  <source
+                    srcSet={image.src}
+                    media="(min-width: 769px)"
+                    type="image/webp"
+                  />
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-full object-cover brightness-[.85] transition-transform
+                    duration-700 ease-in-out scale-100 hover:scale-105 cursor-grab"
+                    loading='lazy'
+                    decoding='async'
+                  />
+                </picture>
+                <div className="absolute inset-0 bg-black/20" aria-hidden="true" />
+              </div>
+            </SwiperSlide>
+          )
+        })}
 
         {/* Navigation Buttons */}
         <button
@@ -50,12 +71,14 @@ const BannerSlider: FunctionComponent<ImageCarouselProps> = ({ images }) => {
           bg-white/20 hover:bg-white/40 text-white p-5 backdrop-blur-md 
           shadow-md transition-all duration-300"
           aria-label="Previous Slide"
+          title='Previous slide'
         ></button>
         <button
           className="swiper-button-next absolute right-4 top-1/2 z-20 -translate-y-1/2 
           bg-white/20 hover:bg-white/40 text-white p-5 backdrop-blur-md 
           shadow-md transition-all duration-300"
           aria-label="Next Slide"
+          title='Next slide'
         ></button>
       </Swiper>
     </div>
